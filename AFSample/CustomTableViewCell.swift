@@ -10,8 +10,13 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet var titleLabel: UILabel!
+   
     @IBOutlet var bodyLabel: UILabel!
+    
+    
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +28,8 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    
 
 }

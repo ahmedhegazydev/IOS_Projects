@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6A1642A61EE99A08001CB0AD /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1642A51EE99A08001CB0AD /* Users.swift */; };
 		6A16D8551EEA4DCF00F92D33 /* references.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6A16D8541EEA4DCF00F92D33 /* references.rtf */; };
+		6A16D8571EEA991800F92D33 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A16D8561EEA991800F92D33 /* TableViewController.swift */; };
+		6A16D8591EEAB62700F92D33 /* ClickedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A16D8581EEAB62700F92D33 /* ClickedUserViewController.swift */; };
 		6AD56FCD1EE96FDA0045BCB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD56FCC1EE96FDA0045BCB4 /* AppDelegate.swift */; };
 		6AD56FCF1EE96FDA0045BCB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD56FCE1EE96FDA0045BCB4 /* ViewController.swift */; };
 		6AD56FD21EE96FDA0045BCB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD56FD01EE96FDA0045BCB4 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		050954A5F4FDC6CE0F24967E /* Pods-AFSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFSample/Pods-AFSample.release.xcconfig"; sourceTree = "<group>"; };
 		6A1642A51EE99A08001CB0AD /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		6A16D8541EEA4DCF00F92D33 /* references.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = references.rtf; sourceTree = "<group>"; };
+		6A16D8561EEA991800F92D33 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		6A16D8581EEAB62700F92D33 /* ClickedUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickedUserViewController.swift; sourceTree = "<group>"; };
 		6AD56FC91EE96FDA0045BCB4 /* AFSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD56FCC1EE96FDA0045BCB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AD56FCE1EE96FDA0045BCB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				6AD56FD31EE96FDA0045BCB4 /* AFSample.xcdatamodeld */,
 				6A1642A51EE99A08001CB0AD /* Users.swift */,
 				6A16D8541EEA4DCF00F92D33 /* references.rtf */,
+				6A16D8561EEA991800F92D33 /* TableViewController.swift */,
+				6A16D8581EEAB62700F92D33 /* ClickedUserViewController.swift */,
 			);
 			path = AFSample;
 			sourceTree = "<group>";
@@ -348,8 +354,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A1642A61EE99A08001CB0AD /* Users.swift in Sources */,
+				6A16D8591EEAB62700F92D33 /* ClickedUserViewController.swift in Sources */,
 				6AD56FD51EE96FDA0045BCB4 /* AFSample.xcdatamodeld in Sources */,
 				6AD56FCF1EE96FDA0045BCB4 /* ViewController.swift in Sources */,
+				6A16D8571EEA991800F92D33 /* TableViewController.swift in Sources */,
 				6AD56FFE1EE9748E0045BCB4 /* CustomTableViewCell.swift in Sources */,
 				6AD56FCD1EE96FDA0045BCB4 /* AppDelegate.swift in Sources */,
 			);

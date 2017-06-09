@@ -13,12 +13,16 @@ import Alamofire
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
+    
     
     //var usersArray = [Users]()
     var usersArray = [AnyObject]()
     var titlesArray = [String]()
     var bodiesArray = [String]()
+    var sectionIndexs = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "G", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    
+    
     
     
     override func viewDidLoad() {
@@ -53,9 +57,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 //print(self.titlesArray)//tested success
                 //print(self.bodiesArray)//tested success
             
-                //refresh the tableView for dispalying the data on customcells
-                self.tableView.reloadData()
-                
+            //refresh the tableView for dispalying the data on customcells
+            self.tableView.reloadData()
             
             break
             case .failure(let error):
@@ -64,7 +67,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 break
             }
             
+            
         }
+        //refresh the tableView for dispalying the data on customcells
+        self.tableView.reloadData()
+        
                 /*
             
             if let dic  = result.value as? Dictionary<String, AnyObject>{
@@ -126,9 +133,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     
+        return 1;
+        
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.titlesArray.count;
-        //return usersArray.count;
-        // or as both are equal in size return bodiesArray.count
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.titlesArray[section]
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {return self.sectionIndexs}
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mainStoryBoard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
+        
+        let clickedUser = mainStoryBoard.instantiateViewController(withIdentifier: "clickedUserStoryBoardId") as? ClickedUserViewController
+        //passing the user title and body
+        let cell = self.tableView.cellForRow(at: indexPath)
+        clickedUser?.tit = self.titlesArray[indexPath.row]
+        clickedUser?.body = self.bodiesArray[indexPath.row]
+        
+        self.navigationController?.pushViewController(clickedUser!, animated: true)
+        
     }
     
     
@@ -136,23 +167,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell
         
-        let index:Int = indexPath.row;
-        //print(index) !!!! the index from 0 to 7
-        
-        let title = titlesArray[index]
-        //print("titlle:", title)
-        cell?.titleLabel.text = title
-        
-        let body = bodiesArray[index]
-        //print("body:", body)
-        cell?.bodyLabel.text = body
-        
+        //case 0:
+            //let title = titlesArray[indexPath.row]
+            //print("titlle:", title)
+            //cell?.titleLabel.text = title
+            
+            let body = self.bodiesArray[indexPath.row]
+            //print("body:", body)
+            cell?.bodyLabel.text = body
+        //cell?.configureForTitles(title: titlesArray[indexPath.row])
+        //case 1:
+          //  cell?.configureForBodies(body: bodiesArray[indexPath.row])
+            
+        //default:
+          //  fatalError("Unknown Section ==> cell")
+        //}
         
         /*
         let title = usersArray[indexPath.row]["title"]
         //print(title)
         cell?.titleLabel.text = title as? String
-        
  */
  
  return cell!;
