@@ -13,7 +13,7 @@ import Alamofire
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     //var usersArray = [Users]()
     var usersArray = [AnyObject]()
@@ -31,17 +31,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         
             switch response.result {
+            //pass the result to result variable
             case .success(let result):
             
                 //print (result);//tested success
-                
+                //loop on all array bojects of json file
             for anItem in result as! [Dictionary<String, AnyObject>]{
                 
                 //print(anItem) //tested success
-                let title = anItem["title"]
+                let title = anItem["title"]//get the object child that tagged with name "title"
                 self.titlesArray.append(title! as! String)
                 
-                let body = anItem["body"]
+                let body = anItem["body"]//get the object child taht tagged with name "body"
                 self.bodiesArray.append(body! as! String)
                 }
                 //print(self.titlesArray)//tested success
