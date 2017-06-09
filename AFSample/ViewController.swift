@@ -155,8 +155,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let clickedUser = mainStoryBoard.instantiateViewController(withIdentifier: "clickedUserStoryBoardId") as? ClickedUserViewController
         //passing the user title and body
         let cell = self.tableView.cellForRow(at: indexPath)
-        clickedUser?.tit = self.titlesArray[indexPath.row]
-        clickedUser?.body = self.bodiesArray[indexPath.row]
+        clickedUser?.tit = self.titlesArray[indexPath.section]
+        clickedUser?.body = self.bodiesArray[indexPath.section]
         
         self.navigationController?.pushViewController(clickedUser!, animated: true)
         
