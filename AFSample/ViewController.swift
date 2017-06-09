@@ -58,7 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 //print(self.bodiesArray)//tested success
             
             //refresh the tableView for dispalying the data on customcells
-            self.tableView.reloadData()
+           self.tableView.reloadData()
             
             break
             case .failure(let error):
@@ -70,7 +70,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
         //refresh the tableView for dispalying the data on customcells
-        self.tableView.reloadData()
+        ///self.tableView.reloadData()
         
                 /*
             
@@ -172,7 +172,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //print("titlle:", title)
             //cell?.titleLabel.text = title
             
-            let body = self.bodiesArray[indexPath.row]
+            let body = self.bodiesArray[indexPath.section]
             //print("body:", body)
             cell?.bodyLabel.text = body
         //cell?.configureForTitles(title: titlesArray[indexPath.row])
