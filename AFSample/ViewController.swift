@@ -46,6 +46,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let body = anItem["body"]//get the object child taht tagged with name "body"
                 self.bodiesArray.append(body! as! String)
                 }
+            
+            //print(self.titlesArray.count)//=100
+            //print(self.bodiesArray.count)//=100
+            
                 //print(self.titlesArray)//tested success
                 //print(self.bodiesArray)//tested success
             
@@ -120,15 +124,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.titlesArray.count;
+        //return usersArray.count;
+        // or as both are equal in size return bodiesArray.count
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell
         
-        let title = titlesArray[indexPath.row]
-        print("titlle:", title)
+        let index:Int = indexPath.row;
+        //print(index) !!!! the index from 0 to 7
+        
+        let title = titlesArray[index]
+        //print("titlle:", title)
         cell?.titleLabel.text = title
-        let body = bodiesArray[indexPath.row]
-        print("body:", body)
+        
+        let body = bodiesArray[index]
+        //print("body:", body)
         cell?.bodyLabel.text = body
         
         
@@ -142,12 +158,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
  return cell!;
         
         
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titlesArray.count;
-        //return usersArray.count;
-        // or as both are equal in size return bodiesArray.count
     }
     
     
