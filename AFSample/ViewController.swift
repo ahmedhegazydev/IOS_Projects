@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //using Alamofire framework
         Alamofire.request("https://jsonplaceholder.typicode.com/posts").responseJSON { response in
 
         //Alamofire.request("http://thecodeeasy.com/test/swiftjson.json").responseJSON{ response in
@@ -47,7 +48,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
                 //print(self.titlesArray)//tested success
                 //print(self.bodiesArray)//tested success
-                
+            
+                //refresh the tableView for dispalying the data on customcells
                 self.tableView.reloadData()
                 
             
